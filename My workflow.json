@@ -1,0 +1,94 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1wKj-ELTNxJCSLBW1W5gukerU4GiwcS_JsQcNgKvOU34",
+          "mode": "list",
+          "cachedResultName": "latihan pkl",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wKj-ELTNxJCSLBW1W5gukerU4GiwcS_JsQcNgKvOU34/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wKj-ELTNxJCSLBW1W5gukerU4GiwcS_JsQcNgKvOU34/edit#gid=0"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "008fa9e1-6297-4af2-8209-e4a738e1d310",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "tgzUgglYQVEqczdc",
+          "name": "Google Sheets Trigger OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6026836796",
+        "text": "={{ $json.tugas }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "2f681c43-5e3d-4725-b17c-5def4ad85536",
+      "name": "Send a text message",
+      "webhookId": "774143f6-565f-4b70-87bf-6477fa11de0a",
+      "credentials": {
+        "telegramApi": {
+          "id": "EbxOwyFUAwscIdlq",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c53bb74f-d5a1-479a-ac58-7eb9f9298925",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b02de450e8a5156732ec2f14efc94b857422580b5d5de05b76103092629bdf2c"
+  },
+  "id": "99smuTskV1jrhE6y",
+  "tags": []
+}
